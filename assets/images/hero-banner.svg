@@ -1,0 +1,55 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- พื้นหลัง -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFE4B5;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.8"/>
+        </linearGradient>
+    </defs>
+    <rect width="1200" height="600" fill="url(#bgGradient)"/>
+
+    <!-- โต๊ะไม้ -->
+    <rect x="0" y="400" width="1200" height="200" fill="#8B4513"/>
+    <rect x="0" y="390" width="1200" height="20" fill="#A0522D"/>
+
+    <!-- ขนมปังสังขยาชิ้นใหญ่กลาง -->
+    <g transform="translate(500,200)">
+        <!-- ขนมปัง -->
+        <path d="M0,0 Q100,-50 200,0 Q100,50 0,0" fill="#FFE4B5" stroke="#DEB887" stroke-width="3"/>
+        <!-- สังขยา -->
+        <path d="M30,-5 Q100,-40 170,-5 Q100,30 30,-5" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+        <!-- เงา -->
+        <ellipse cx="100" cy="50" rx="90" ry="20" fill="rgba(0,0,0,0.2)"/>
+    </g>
+
+    <!-- ขนมปังเล็กๆ กระจายรอบๆ -->
+    <g transform="translate(200,300) scale(0.6)">
+        <!-- ขนมปัง -->
+        <path d="M0,0 Q100,-50 200,0 Q100,50 0,0" fill="#FFE4B5" stroke="#DEB887" stroke-width="3"/>
+        <!-- สังขยาใบเตย -->
+        <path d="M30,-5 Q100,-40 170,-5 Q100,30 30,-5" fill="#90EE90" stroke="#228B22" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(800,350) scale(0.7)">
+        <!-- ขนมปัง -->
+        <path d="M0,0 Q100,-50 200,0 Q100,50 0,0" fill="#FFE4B5" stroke="#DEB887" stroke-width="3"/>
+        <!-- สังขยาฟักทอง -->
+        <path d="M30,-5 Q100,-40 170,-5 Q100,30 30,-5" fill="#FFA500" stroke="#FF8C00" stroke-width="2"/>
+    </g>
+
+    <!-- ไอน้ำ -->
+    <g opacity="0.6">
+        <path d="M550,150 Q560,130 570,150" stroke="white" fill="none" stroke-width="3">
+            <animate attributeName="d" dur="3s" repeatCount="indefinite"
+                values="M550,150 Q560,130 570,150;
+                        M550,150 Q560,120 570,150;
+                        M550,150 Q560,130 570,150"/>
+        </path>
+        <path d="M600,140 Q610,120 620,140" stroke="white" fill="none" stroke-width="3">
+            <animate attributeName="d" dur="2.5s" repeatCount="indefinite"
+                values="M600,140 Q610,120 620,140;
+                        M600,140 Q610,110 620,140;
+                        M600,140 Q610,120 620,140"/>
+        </path>
+    </g>
+</svg>

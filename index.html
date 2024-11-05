@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ขนมปังสังขยา - อร่อยทุกคำ หอมหวานทุกชิ้น</title>
+  <meta name="description" content="ขนมปังสังขยาโฮมเมด รสชาติอร่อย เนื้อนุ่ม หอมหวาน มีให้เลือกหลากหลายไส้">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff9933">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <header class="header">
+    <img src="assets/images/hero-banner.svg" alt="ขนมปังสังขยาหลากหลายรูปแบบ" class="header-banner">
+    <div class="header-content">
+      <h1 class="title">ขนมปังสังขยา</h1>
+      <p class="subtitle">อร่อยทุกคำ หอมหวานทุกชิ้น</p>
+      <button class="button" onclick="scrollToMenu()">
+        <span class="button-text">ดูเมนู</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="menu-title">เมนูของเรา</h2>
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="assets/images/custard-bread.svg" alt="ขนมปังสังขยาไข่" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">ขนมปังสังขยาไข่</h3>
+              <p class="product-description">สังขยาไข่แท้ เนื้อนุ่ม หอมมัน</p>
+              <p class="product-price">35 บาท</p>
+              <button class="button" onclick="addToCart('ขนมปังสังขยาไข่', 35)">
+                <span class="button-text">เพิ่มลงตะกร้า</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/pandan-bread.svg" alt="ขนมปังสังขยาใบเตย" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">ขนมปังสังขยาใบเตย</h3>
+              <p class="product-description">หอมใบเตยธรรมชาติ สีเขียวสดใส</p>
+              <p class="product-price">40 บาท</p>
+              <button class="button" onclick="addToCart('ขนมปังสังขยาใบเตย', 40)">
+                <span class="button-text">เพิ่มลงตะกร้า</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/pumpkin-bread.svg" alt="ขนมปังสังขยาฟักทอง" class="product-image">
+            <div class="product-info">
+              <h3 class="product-title">ขนมปังสังขยาฟักทอง</h3>
+              <p class="product-description">หวานมัน ทำจากฟักทองแท้</p>
+              <p class="product-price">40 บาท</p>
+              <button class="button" onclick="addToCart('ขนมปังสังขยาฟักทอง', 40)">
+                <span class="button-text">เพิ่มลงตะกร้า</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="cart-button" onclick="showCart()">
+    <span class="cart-icon">🛒</span>
+    <span class="cart-count">0</span>
+  </div>
+
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCart()">&times;</button>
+      <h2 class="modal-title">ตะกร้าสินค้า</h2>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-summary">
+        <div class="cart-total">
+          <span>ยอดรวม:</span>
+          <span id="totalPrice">0</span>
+          <span>บาท</span>
+        </div>
+        <button class="button order-button" onclick="submitOrder()">
+          <span class="button-text">สั่งซื้อ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script>
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered successfully');
+          })
+          .catch(err => {
+            console.log('Service Worker registration failed:', err);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>
